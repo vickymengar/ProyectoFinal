@@ -29,8 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $genero_album = $_POST['genero_album'];
         $link_spotify = $_POST['link_spotify'];
         $link_apple = $_POST['link_apple'];
-        $imagen_album = $_POST['imagen_album'];
         $descripcion_album = $_POST['descripcion_album'];
+
+        // Maneja la imagen (ajusta según tus necesidades)
+        $imagen_album = $_FILES["imagen_album"]["name"];
+        $ruta_temporal = $_FILES["imagen_album"]["tmp_name"];
+        $ruta_destino = "../../img/album/" . $imagen_album;
+        move_uploaded_file($ruta_temporal, $ruta_destino);
 
         // Puedes realizar validaciones adicionales aquí si es necesario
 

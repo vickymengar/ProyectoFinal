@@ -27,7 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nacionalidad_artista = $_POST['nacionalidad'];
         $apodo_artista = $_POST['apodo'];
         $biografia_artista = $_POST['descripcion'];
-        $imagen_artista = $_POST['imagen'];
+
+        // Maneja la imagen (ajusta según tus necesidades)
+        $imagen_artista = $_FILES["imagen"]["name"];
+        $ruta_temporal = $_FILES["imagen"]["tmp_name"];
+        $ruta_destino = "../../img/album/" . $imagen_artista;
+        move_uploaded_file($ruta_temporal, $ruta_destino);
 
         // Puedes realizar validaciones adicionales aquí si es necesario
 

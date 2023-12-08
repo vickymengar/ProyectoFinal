@@ -78,7 +78,7 @@ if ($album_id) {
 </div>
 
     </div>
-    <form action="../backend/albums/update.php" method="POST">
+    <form action="../backend/albums/update.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id_album" value="<?php echo $album['id_album']; ?>">a
         <div class="row pad text-center">
             <div class="col-sm-4">

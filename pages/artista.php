@@ -49,7 +49,7 @@
             <img src="../img/artista.png" width="150" height="150" class="d-inline-block align"> 
         </div>
     </div> 
-    <form action="../backend/artistas/insert.php" method="POST">
+    <form action="../backend/artistas/insert.php" method="POST" enctype="multipart/form-data">
         <div class="row pad text-center">
             <div class="col-sm-4">
                 <label for="nombre">Nombre</label><spam class="text-danger">*</spam>
@@ -102,6 +102,6 @@
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/formulario.js"></script>
+<script src="../js/captura.js"></script>
 </body>
 </html>

@@ -85,7 +85,7 @@ if ($artista_id) {
         <img src="../img/album/<?php echo $imagen_artista ? $imagen_artista : 'descargar.png'; ?>" width="150" height="150" class="d-inline-block align">
         </div>
     </div>
-    <form action="../backend/artistas/update.php" method="POST">
+    <form action="../backend/artistas/update.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id_artista" value="<?php echo $artista_id; ?>">
         <div class="row pad text-center">
             <div class="col-sm-4">

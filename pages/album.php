@@ -74,7 +74,7 @@ if ($album_id) {
             <img src="../img/descargar.png" width="150" height="150" class="d-inline-block align">
         </div>
     </div>
-    <form action="../backend/albums/insert.php" method="POST">
+    <form action="../backend/albums/insert.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id_album" value="<?php echo $album_id; ?>">
         <div class="row pad text-center">
             <div class="col-sm-4">
@@ -141,7 +141,7 @@ if ($album_id) {
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/formulario.js"></script>
+<script src="../js/captura.js"></script>
 </body>
 
 </html>

@@ -8,8 +8,35 @@ $app = $_POST["app"];
 $apm = $_POST["apm"];
 $nacionalidad = $_POST["nacionalidad"];
 $apodo = $_POST["apodo"];
-$nombre_imagen = $_POST["imagen"];  // Solo el nombre del archivo, asumiendo que se envía desde el formulario
 $descripcion = $_POST["descripcion"];
+
+// Manejo de la carga de la imagen
+$nombre_imagen = '';
+if(isset($_FILES['imagen'])){
+    $errors= array();
+    $nombre_imagen = $_FILES['imagen']['name'];
+    $file_size = $_FILES['imagen']['size'];
+    $file_tmp = $_FILES['imagen']['tmp_name'];
+    $file_type = $_FILES['imagen']['type'];
+    $file_ext = strtolower(end(explode('.',$_FILES['imagen']['name'])));
+    
+    $extensions= array("jpeg","jpg","png");
+    
+    if(in_array($file_ext,$extensions) === false){
+        $errors[]="Extensión no permitida, elige una imagen JPEG o PNG.";
+    }
+    
+    if($file_size > 2097152){
+        $errors[]='El tamaño del archivo debe ser menor a 2 MB';
+    }
+    
+    if(empty($errors)==true){
+        move_uploaded_file($file_tmp,"../../img/album/".$nombre_imagen);
+        echo "Imagen subida con éxito";
+    }else{
+        print_r($errors);
+    }
+}
 
 // Verificar si el artista ya está registrado
 $consulta_existencia = "SELECT * FROM artista WHERE nombre_artista = '$nombre'";
