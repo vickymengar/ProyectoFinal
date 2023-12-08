@@ -5,11 +5,19 @@
 
 }
 .bg-personal-nav{
-    background-color: #f1d39b !important;
+    background-color: white !important;
 }
 
 .bg-personal{
-    background-color: #a3c4c2 !important;
+    background-color: #33cccc !important;
+}
+
+.bg-registroalbum{
+    background-color: teal !important;
+}
+
+.bg-registroartista{
+    background-color: purple !important;
 }
 
 .navbar-dark{
@@ -23,4 +31,24 @@
 .img-fixed{
     width: auto;
     height: 150px;
+}
+
+body.fondo1 {
+    background: linear-gradient(to bottom, #ff8700, #ffd400);
+}
+
+body.fondo2 {
+    background: linear-gradient(to bottom, #00ab94,  #00eed0);
+}
+
+body.fondo3 {
+    background: linear-gradient(to bottom, #b5179e,  #7209b7);
+}
+
+body.fondo4 {
+    background: linear-gradient(to bottom, #ff499e,  #ec0868);
+}
+
+#container{
+    background-color: rgba(255, 255, 255, 0.8);
 }

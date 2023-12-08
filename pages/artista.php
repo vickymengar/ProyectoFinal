@@ -2,17 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>PLATAMIX</title>
+    <title>Rhythmhub</title>
     <link rel="stylesheet" href="../css/estilos.css"> 
-    <link rel="icon" href="../img/logo.png" type="icono">
+    <link rel="icon" href="../img/nota-musical.png" type="icono">
     <link rel="stylesheet" href="../css/bootstrap.min.css"> 
 </head>
-<body>
+
+<body class="fondo3">
 
 <!-- Navegador --->
 <nav class="navbar bg-personal-nav navbar-expand-lg navbar-light">
-    <img src="../img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-    <h5 class="navbar-brand">PlataMix</h5>
+    <div class="d-flex align-items-center">    
+        <img src="../img/nota-musical.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        <h5 class="navbar-brand mb-0 ml-2">Rhythmhub</h5>
+    </div>       
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,13 +23,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Inicio</a>
+                <a class="nav-link d-flex align-items-center" href="../index.php">
+                <img src="../img/tienda-de-musica.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">                    
+                Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./album.php">Albumes</a>
+                <a class="nav-link d-flex align-items-center" href="./album.php">
+                <img src="../img/discos-compactos.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">                    
+                Albumes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./artista.php">Artistas</a>
+                <a class="nav-link d-flex align-items-center" href="./artista.php">
+                <img src="../img/ventilador.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">                                        
+                Artistas</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="./resultado_busqueda.php">
@@ -38,15 +47,15 @@
 <br>
 
 <!-- Contenido --->
-<div class="container-fluid bg-light">
+<div class="container-md rounded mt-3 mb-5" id="container">
     <div class="row">
-        <div class="col-12 text-center">  
+        <div class="col-12 text-center mt-5">  
             <h2 class="text-dark">Registrar nuevo artista</h2>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col-md-12">  
-            <img src="../img/artista.png" width="150" height="150" class="d-inline-block align"> 
+    <div class="row text-center mt-5">
+        <div class="col-md-12 mt-3 mb-5">  
+            <img src="../img/escucha.png" width="150" height="150" class="d-inline-block align"> 
         </div>
     </div> 
     <form action="../backend/artistas/insert.php" method="POST" enctype="multipart/form-data">
@@ -91,8 +100,8 @@
         </div> 
         <!-- Botones -->
         <div class="row pad text-center">
-            <div class="col-sm-12">
-                <button class="btn bg-personal" type="submit" value="" onclick="validarart();">Registrar</button>
+            <div class="col-sm-12 mb-3">
+                <button class="btn bg-registroartista text-light" type="submit" value="" onclick="validarart();">Registrar</button>
                 <button class="btn bg-dark text-light" type="reset" value="" onclick="limpiarart();">Limpiar</button>
             </div>
         </div>

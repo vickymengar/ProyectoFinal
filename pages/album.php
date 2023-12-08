@@ -24,19 +24,21 @@ if ($album_id) {
 
 <head>
     <meta charset="utf-8">
-    <title>PLATAMIX</title>
+    <title>Rhythmhub</title>
     <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="icon" href="../img/logo.png" type="icono">
+    <link rel="icon" href="../img/nota-musical.png" type="icono">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="fondo2">
 
 
 <!-- Navegador --->
 <nav class="navbar bg-personal-nav navbar-expand-lg navbar-light">
-    <img src="../img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-    <h5 class="navbar-brand">PlataMix</h5>
+    <div class="d-flex align-items-center">
+        <img src="../img/nota-musical.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        <h5 class="navbar-brand mb-0 ml-2">Rhythmhub</h5>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,13 +46,19 @@ if ($album_id) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Inicio</a>
+                <a class="nav-link d-flex align-items-center" href="../index.php">
+                <img src="../img/tienda-de-musica.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+                Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./album.php">Albumes</a>
+                <a class="nav-link d-flex align-items-center" href="./album.php">
+                <img src="../img/discos-compactos.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+                Albumes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./artista.php">Artistas</a>
+                <a class="nav-link d-flex align-items-center" href="./artista.php">
+                <img src="../img/ventilador.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">                    
+                Artistas</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="./resultado_busqueda.php">
@@ -63,15 +71,15 @@ if ($album_id) {
 
 
 <!-- Contenido -->
-<div class="container-fluid bg-light">
+<div class="container-md rounded mt-3 mb-5" id="container">
     <div class="row">
-        <div class="col-12 text-center">
-            <h2 class="text-dark">Registrar nuevo Álbum</h2>
+        <div class="col-12 text-center mt-5">
+            <h2 class="text-dark">Registrar un álbum nuevo</h2>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-md-12">
-            <img src="../img/descargar.png" width="150" height="150" class="d-inline-block align">
+        <div class="col-md-12 mt-5 mb-5">
+            <img src="../img/album.png" width="150" height="150" class="d-inline-block align">
         </div>
     </div>
     <form action="../backend/albums/insert.php" method="POST" enctype="multipart/form-data">
@@ -91,47 +99,47 @@ if ($album_id) {
                 <label id="text-error-artist" class="text-danger"></label>
             </div>
             <div class="col-sm-4">
-                <label for="nombre_cancion">Nombre canción</label><spam class="text-danger">*</spam>
+                <label for="nombre_cancion">Nombre de la canción</label><spam class="text-danger">*</spam>
                 <input type="text" name="nombre_cancion" class="form-control" id="nombre_cancion" placeholder="Nombre de la canción" required>
                 <label id="text-error-cancion" class="text-danger"></label>
             </div>
             <div class="col-sm-4">
-                <label for="nombre_album">Nombre Álbum</label><spam class="text-danger">*</spam>
+                <label for="nombre_album">Nombre del álbum</label><spam class="text-danger">*</spam>
                 <input type="text" name="nombre_album" class="form-control" id="nombre_album" placeholder="Nombre del Álbum" required>
                 <label id="text-error-album" class="text-danger"></label>
             </div>
             <div class="col-sm-4">
-                <label for="genero_album">Género del Álbum</label><spam class="text-danger">*</spam>
+                <label for="genero_album">Género del álbum</label><spam class="text-danger">*</spam>
                 <input type="text" name="genero_album" class="form-control" id="genero_album" placeholder="Género del Álbum" required>
                 <label id="text-error-genero" class="text-danger"></label>
             </div>
             <div class="col-sm-4">
-                <label for="imagen_album">Imagen del Álbum</label>
+                <label for="imagen_album">Imagen del álbum</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" name="imagen_album" id="imagen_album" aria-describedby="inputGroupFileAddon01" accept="image/*">
                     <label class="custom-file-label" for="imagen_album">Seleccionar archivo</label>
                 </div>
             </div>
             <div class="col-sm-4">
-                <label for="link_spotify">Link Spotify</label><spam class="text-danger">*</spam>
+                <label for="link_spotify">Link de Spotify</label><spam class="text-danger">*</spam>
                 <input type="text" name="link_spotify" class="form-control" id="link_spotify" placeholder="Link Spotify" required>
                 <label id="text-error-spotify" class="text-danger"></label>
             </div>
             <div class="col-sm-4">
-                <label for="link_apple">Link Apple</label><spam class="text-danger">*</spam>
+                <label for="link_apple">Link de Apple</label><spam class="text-danger">*</spam>
                 <input type="text" name="link_apple" class="form-control" id="link_apple" placeholder="Link Apple" required>
                 <label id="text-error-Apple" class="text-danger"></label>
             </div>
             <div class="col-sm-8">
-                <label for="descripcion_album">Descripción del Álbum</label>
+                <label for="descripcion_album">Descripción del álbum</label>
                 <textarea class="form-control" name="descripcion_album" id="descripcion_album" placeholder="Ingresa la descripción del álbum aquí..."></textarea>
                 <label id="text-error-desc" class="text-danger"></label>
             </div>
             </div>
             <!-- Botones -->
             <div class="row pad">
-                <div class="col-md-12 text-center">
-                    <button class="btn bg-personal" type="submit" value="" onclick="validarart();">Registrar</button>
+                <div class="col-md-12 text-center mb-3">
+                    <button class="btn bg-registroalbum text-light" type="submit" value="" onclick="validarart();">Registrar</button>
                     <button class="btn bg-dark text-light" type="reset" value="" onclick="limpiarart();">Limpiar</button>
                 </div>
             </div>

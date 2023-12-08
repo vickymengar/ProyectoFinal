@@ -31,31 +31,39 @@ $idAlbum = isset($_GET['id']) ? $_GET['id'] : null;
 
 <head>
     <meta charset="utf-8">
-    <title>PLATAMIX</title>
+    <title>Rhythmhub</title>
     <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="icon" href="../img/logo.png" type="icono">
+    <link rel="icon" href="../img/nota-musical.png" type="icono">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="fondo4">
 
 <nav class="navbar bg-personal-nav navbar-expand-lg navbar-light">
-    <img src="../img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-    <h5 class="navbar-brand">PlataMix</h5>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <div class="d-flex align-items-center">
+        <img src="../img/nota-musical.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        <h5 class="navbar-brand mb-0 ml-2">Rhythmhub</h5>
+   </div>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Inicio</a>
+                <a class="nav-link d-flex align-items-center" href="../index.php">
+                <img src="../img/tienda-de-musica.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+                Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./album.php">Álbumes</a>
+                <a class="nav-link d-flex align-items-center" href="./album.php">
+                <img src="../img/discos-compactos.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+                Álbumes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./artista.php">Artistas</a>
+                <a class="nav-link d-flex align-items-center" href="./artista.php">
+                <img src="../img/ventilador.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+                Artistas</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="./resultado_busqueda.php">
@@ -66,11 +74,12 @@ $idAlbum = isset($_GET['id']) ? $_GET['id'] : null;
 </nav>
 <br>
 
-<div class="container-fluid">
+<div class="container-fluid rounded mt-3 mb-5" id="container" >
     <?php if ($idAlbum) { ?>
         <!-- Sección para el caso de visualización de un álbum específico -->
     <?php } else { ?>
-        <h1 class="bg-dark text-center text-light mb-3">Resultados de búsqueda</h1>
+        <br>
+        <h1 class="bg-light rounded text-center text-dark mb-3 p-3">Resultados de búsqueda</h1>
         <?php if (empty($canciones)) { ?>
             <p class="text-center text-danger">No se encontraron resultados para la búsqueda.</p>
         <?php } else { ?>

@@ -33,7 +33,7 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="fondo1">
 
 <!-- Navegador --->
 <nav class="navbar bg-personal-nav navbar-expand-lg navbar-light">
@@ -48,19 +48,19 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./index.php">
+                <a class="nav-link d-flex align-items-center" href="./index.php">
                     <img src="./img/tienda-de-musica.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
                     Inicio
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./pages/album.php">
+                <a class="nav-link d-flex align-items-center" href="./pages/album.php">
                     <img src="./img/discos-compactos.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
                     Albumes
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./pages/artista.php">
+                <a class="nav-link d-flex align-items-center" href="./pages/artista.php">
                     <img src="./img/ventilador.gif" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
                     Artistas
                 </a>
@@ -68,7 +68,7 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="./pages/resultado_busqueda.php">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
-            <button class="btn bg-personal my-2 my-sm-0" type="submit">Buscar</button>
+            <button class="btn bg-personal my-2 my-sm-0" type="submit" id="btnsearch">Buscar</button>
         </form>
     </div>
 </nav>
@@ -79,7 +79,7 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
 <!-- Banner --->
 <div class="container-fluid text-center">
     <!-- Imagen del banner -->
-    <img src="./img/Music festival-cuate.png" class="w-25" alt="imagen1">
+    <img src="" class="w-25" alt="imagen1">
     <br>
     <!-- Título del banner -->
     <h1>Sinfonía de sonidos, un repositorio de emociones</h1>
@@ -98,9 +98,9 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
                     <!-- Tarjeta de presentación de un álbum -->
                     <div class="card bg-secondary mb-3">
                         <div class="row no-gutters">
-                            <div class="col-md-4">
+                            <div class="col-md-4 text-center">
                             <!-- Imagen del álbum -->
-                            <img src="./img/album/<?php echo $album['imagen_album'] ? $album['imagen_album'] : 'descargar.png'; ?>" class="card-img" alt="Imagen del álbum">
+                            <img src="./img/album/<?php echo $album['imagen_album'] ? $album['imagen_album'] : 'descargar.png'; ?>" class="mx-auto" alt="Imagen del álbum">
 
                             </div>
                             <div class="col-md-8">
@@ -135,7 +135,7 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
 <!-- Incluir scripts JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-<script src="./js/formulario.js"></script>
+<script src="./js/captura.js"></script>
 </body>
 
 </html>
