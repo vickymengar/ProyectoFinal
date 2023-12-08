@@ -68,7 +68,7 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="./pages/resultado_busqueda.php">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
-            <button class="btn bg-personal my-2 my-sm-0" type="submit" id="btnsearch">Buscar</button>
+            <button class="btn bg-personal my-2 my-sm-0" type="submit">Buscar</button>
         </form>
     </div>
 </nav>
@@ -79,31 +79,30 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
 <!-- Banner --->
 <div class="container-fluid text-center">
     <!-- Imagen del banner -->
-    <img src="" class="w-25" alt="imagen1">
+    <img src="./img/banner.jpg" class="banner" alt="imagen1">
     <br>
     <!-- Título del banner -->
-    <h1>Sinfonía de sonidos, un repositorio de emociones</h1>
 </div>
 <br>
 <!-- Contenido --->
-<div class="container-fluid">
+<div class="container-fluid rounded mt-3 mb-5" id="container" >
     <?php if ($album_id) { ?>
         <!-- Sección para el caso de visualización de un álbum específico -->
     <?php } else { ?>
         <!-- Sección para la lista de todos los álbumes -->
-        <h1 class="bg-dark text-center text-light mb-3">Checa nuestro repositorio</h1>
+        <h1 class="bg-light rounded text-center text-dark mb-3 p-3">Checa nuestro repositorio</h1>
         <div class="row">
             <?php foreach ($albumes as $album) { ?>
                 <div class="col-md-6">
                     <!-- Tarjeta de presentación de un álbum -->
                     <div class="card bg-secondary mb-3">
                         <div class="row no-gutters">
-                            <div class="col-md-4 text-center">
+                        <div class="col-md-5 d-flex align-items-center justify-content-center">
                             <!-- Imagen del álbum -->
-                            <img src="./img/album/<?php echo $album['imagen_album'] ? $album['imagen_album'] : 'descargar.png'; ?>" class="mx-auto" alt="Imagen del álbum">
+                            <img src="./img/album/<?php echo $album['imagen_album'] ? $album['imagen_album'] : 'descargar.png'; ?>" style="width: 200px; height: 200px; border-radius: 5px;" alt="Imagen del álbum">
 
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <div class="card-body">
                                     <!-- Nombre de la canción -->
                                     <h3 class="card-title text-light"><?php echo $album['nombre_musica']; ?></h3>
@@ -111,16 +110,17 @@ $album_id = isset($_GET['id']) ? $_GET['id'] : null;
                                     <h5 class="card-text text-light"><?php echo $album['apodo_artista']; ?></h5>
                                     <!-- Nombre del álbum -->
                                     <p class="card-text text-light"><?php echo $album['nombre_album']; ?></p>
-                                    <!-- Enlaces a plataformas de música -->
-                                    <a href="<?php echo $album['link_spotify']; ?>" class="btn btn-success">Spotify</a>
-                                    <a href="<?php echo $album['link_apple']; ?>"
-                                        class="btn text-danger btn-light">Apple Music</a>
+                                     <!-- Enlaces a plataformas de música -->
+                                     <div class="mb-2">
+                                        <a href="<?php echo $album['link_spotify']; ?>" class="btn btn-success fa fa-spotify">Spotify</a>
+                                        <a href="<?php echo $album['link_apple']; ?>" class="btn text-danger btn-light">Apple Music</a>
+                                    </div>
                                     <!-- Enlace para ver detalles del álbum -->
-                                    <a href="./pages/detalles_album.php?id=<?php echo $album['id_album']; ?>"
-                                        class="btn btn-dark">Detalles Álbum</a>
+                                    <div class="mb-2">
+                                        <a href="./pages/detalles_album.php?id=<?php echo $album['id_album']; ?>" class="btn btn-dark">Detalles Álbum</a>
                                     <!-- Nuevo botón para ver detalles del artista -->
-                                    <a href="./pages/detalles_artista.php?id=<?php echo $album['id_artista']; ?>"
-                                        class="btn btn-dark">Detalles Artista</a>
+                                        <a href="./pages/detalles_artista.php?id=<?php echo $album['id_artista']; ?>" class="btn btn-dark">Detalles Artista</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

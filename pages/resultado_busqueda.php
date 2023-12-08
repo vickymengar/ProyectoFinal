@@ -88,22 +88,25 @@ $idAlbum = isset($_GET['id']) ? $_GET['id'] : null;
                     <div class="col-md-6">
                         <div class="card bg-secondary mb-3">
                             <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="../img/album/<?php echo $cancion['imagen_album']; ?>" class="card-img"
+                            <div class="col-md-5 d-flex align-items-center justify-content-center">
+                                    <img src="../img/album/<?php echo $cancion['imagen_album']; ?>" style="width: 200px; height: 200px; border-radius: 10px;"
                                         alt="Imagen del álbum">
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-7">
                                     <div class="card-body">
                                         <h3 class="card-title text-light"><?php echo $cancion['nombre_musica']; ?></h3>
                                         <h5 class="card-text text-light"><?php echo $cancion['apodo_artista']; ?></h5>
                                         <p class="card-text text-light"><?php echo $cancion['nombre_album']; ?></p>
-                                        <a href="<?php echo $cancion['link_spotify']; ?>" class="btn btn-success">Spotify</a>
-                                        <a href="<?php echo $cancion['link_apple']; ?>"
-                                        class="btn text-danger btn-light">Apple Music</a>
-                                        <a href="./detalles_album.php?id=<?php echo $cancion['id_album']; ?>"
-                                        class="btn btn-dark">Detalles Álbum</a>
-                                        <a href="./detalles_artista.php?id=<?php echo $cancion['id_artista']; ?>"
-                                        class="btn btn-dark">Detalles Artista</a>
+                                        <div class="mb-2">    
+                                            <a href="<?php echo $cancion['link_spotify']; ?>" class="btn btn-success">Spotify</a>
+                                            <a href="<?php echo $cancion['link_apple']; ?>"class="btn text-danger btn-light">Apple Music</a>
+                                        </div>
+                                        <div class="mb-2">    
+                                            <a href="./detalles_album.php?id=<?php echo $cancion['id_album']; ?>"
+                                            class="btn btn-dark">Detalles Álbum</a>
+                                            <a href="./detalles_artista.php?id=<?php echo $cancion['id_artista']; ?>"
+                                            class="btn btn-dark">Detalles Artista</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +120,7 @@ $idAlbum = isset($_GET['id']) ? $_GET['id'] : null;
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/formulario.js"></script>
+<script src="../js/captura.js"></script>
 </body>
 
 </html>

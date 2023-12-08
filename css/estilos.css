@@ -20,21 +20,25 @@
     background-color: purple !important;
 }
 
+.bg-detalbum{
+    background-color: black !important;
+}
+
 .navbar-dark{
     color: #b7667f !important;
 }
 
-.bg-person-1{
-    background-color: #ecdbba !important;
+.banner{
+    width: auto;
+    height: auto;
 }
 
-.img-fixed{
-    width: auto;
-    height: 150px;
+.card-img{
+    text-align: center;
 }
 
 body.fondo1 {
-    background: linear-gradient(to bottom, #ff8700, #ffd400);
+    background: linear-gradient(to right,#ffd400,  #ff8700);
 }
 
 body.fondo2 {

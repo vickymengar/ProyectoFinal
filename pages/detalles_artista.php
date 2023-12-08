@@ -45,7 +45,7 @@ if ($artista_id) {
     <link rel="stylesheet" href="../css/bootstrap.min.css"> 
 </head>
 
-<body class="fondo2">
+<body class="fondo3">
 
 <!-- Navegador --->
 <nav class="navbar bg-personal-nav navbar-expand-lg navbar-light">
@@ -83,13 +83,13 @@ if ($artista_id) {
 </nav>
 <br>
 <!-- Contenido --->
-<div class="container-fluid bg-light">
+<div class="container-md rounded mt-3 mb-5" id="container">
     <div class="row">
-        <div class="col-12 text-center">
+    <div class="col-12 text-center mt-5">
             <h2 class="text-dark">Detalles del artista</h2>
         </div>
     </div>
-    <div class="row text-center">
+    <div class="row text-center mt-5 mb-5">
         <div class="col-md-12">
         <img src="../img/album/<?php echo $imagen_artista ? $imagen_artista : 'descargar.png'; ?>" width="150" height="150" class="d-inline-block align">
         </div>
@@ -145,7 +145,7 @@ if ($artista_id) {
         <!-- Botones -->
         <div class="row pad text-center">
             <div class="col-sm-12">
-                <button class="btn bg-personal" type="submit" value="" onclick="actualizarart();">Actualizar</button>
+                <button class="btn bg-registroartista text-light" type="submit" value="" onclick="actualizarart();">Actualizar</button>
                 <button class="btn bg-danger text-light" type="submit" name="borrar" onclick="return confirm('¿Estás seguro de que deseas borrar este artista?');">Borrar</button>
 
             </div>

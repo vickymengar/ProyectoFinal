@@ -36,7 +36,7 @@ if ($album_id) {
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
-<body class="fondo1">
+<body class="fondo2">
 
 <!-- Navegador --->
 <nav class="navbar bg-personal-nav navbar-expand-lg navbar-light">
@@ -74,20 +74,20 @@ if ($album_id) {
 </nav>
 <br>
 
-<div class="container-fluid bg-light">
+<div class="container-md rounded mt-3 mb-5" id="container">
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-5">
             <h2 class="text-dark">Detalles del Álbum</h2>
         </div>
     </div>
-    <div class="row text-center">
+    <div class="row text-center mt-5 mb-5">
     <div class="col-md-12">
     <img src="../img/album/<?php echo $album['imagen_album'] ? $album['imagen_album'] : 'descargar.png'; ?>" width="150" height="150" class="d-inline-block align">
 </div>
 
     </div>
     <form action="../backend/albums/update.php" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="id_album" value="<?php echo $album['id_album']; ?>">a
+    <input type="hidden" name="id_album" value="<?php echo $album['id_album']; ?>">
         <div class="row pad text-center">
             <div class="col-sm-4">
                 <label for="artista">Artista</label><spam class="text-danger">*</spam>
@@ -144,7 +144,7 @@ if ($album_id) {
         </div>
         <div class="row pad">
             <div class="col-md-12 text-center">
-                <button class="btn bg-personal" type="submit" value="" onclick="actualizaralb();">Actualizar</button>
+                <button class="btn bg-registroalbum text-light" type="submit" value="" onclick="actualizaralb();">Actualizar</button>
                 <button class="btn bg-danger text-light" type="submit" name="borrar" onclick="return confirm('¿Estás seguro de que deseas borrar este album?');">Borrar</button>
 
 
@@ -155,7 +155,7 @@ if ($album_id) {
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/formulario.js"></script>
+<script src="../js/captura.js"></script>
 </body>
 
 </html>
