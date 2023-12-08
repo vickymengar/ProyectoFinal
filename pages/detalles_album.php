@@ -137,7 +137,7 @@ if ($album_id) {
         <div class="row pad">
             <div class="col-md-12 text-center">
                 <button class="btn bg-personal" type="submit" value="" onclick="actualizaralb();">Actualizar</button>
-                <button class="btn bg-danger text-light" type="submit" name="borrar" onclick="return confirm('¿Estás seguro de que deseas borrar este artista?');">Borrar</button>
+                <button class="btn bg-danger text-light" type="submit" name="borrar" onclick="return confirm('¿Estás seguro de que deseas borrar este album?');">Borrar</button>
 
 
             </div>
