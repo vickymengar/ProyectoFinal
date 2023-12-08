@@ -28,10 +28,10 @@
     color: #b7667f !important;
 }
 
-.banner{
-    width: auto;
-    height: auto;
+.banner {
+    opacity: 0.8; /* Puedes ajustar este valor según tus preferencias */
 }
+
 
 .card-img{
     text-align: center;
